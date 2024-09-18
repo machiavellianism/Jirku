@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Willkommen bei [Ihr Autohaus]! Wir bieten die besten Autos, Dienstleistungen und Reparaturen.">
+    <meta name="keywords" content="auto, autohaus, autoreparatur, autoservice">
+    <meta name="author" content="[Ihr Autohaus]">
+    <title>Willkommen bei [Ihr Autohaus]</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link zu Ihrer CSS-Datei -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .services, .about, .contact {
+            margin: 40px 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Slider Styling */
+        .slider {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+        }
+
+        .slides {
+            display: none;
+            width: 100%;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.6s ease;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            section {
+                padding: 20px 10px;
+            }
+
+            .slider img {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Willkommen bei [Ihr Autohaus]</h1>
+        <p>Ihr zuverlässiger Partner für Autoverkauf, Dienstleistungen und Reparaturen.</p>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#services">Dienstleistungen</a>
+        <a href="#about">Über uns</a>
+        <a href="#contact">Kontakt</a>
+    </nav>
+
+    <!-- Slider Section -->
+    <div class="slider">
+        <div class="slides">
+            <img src="https://via.placeholder.com/1500x500?text=Auto+1" alt="Auto 1">
+        </div>
+        <div class="slides">
+            <img src="https://via.placeholder.com/1500x500?text=Auto+2" alt="Auto 2">
+        </div>
+        <div class="slides">
+            <img src="https://via.placeholder.com/1500x500?text=Auto+3" alt="Auto 3">
+        </div>
+
+        <!-- Navigation Buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!-- Main Content -->
+    <section id="services" class="services">
+        <h2>Unsere Dienstleistungen</h2>
+        <p>Wir bieten eine Reihe von Dienstleistungen an, darunter:</p>
+        <ul>
+            <li>Autoverkauf (neue und gebrauchte Autos)</li>
+            <li>Fahrzeugreparaturen und -wartung</li>
+            <li>Autoreinigung und Detailing</li>
+            <li>Autoteile und Zubehör</li>
+        </ul>
+    </section>
+
+    <section id="about" class="about">
+        <h2>Über uns</h2>
+        <p>Bei [Ihr Autohaus] sind wir bestrebt, die besten Automobildienstleistungen zu bieten. Mit jahrelanger Erfahrung sorgt unser Expertenteam dafür, dass Sie jedes Mal erstklassigen Service erhalten. Vom Kauf eines neuen Autos bis zur Fahrzeugwartung - wir sind für Sie da.</p>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Kontaktieren Sie uns</h2>
+        <p>Standort: Auto Straße 123, Autostadt, DE</p>
+        <p>Telefon: (123) 456-7890</p>
+        <p>E-Mail: info@ihrautohaus.de</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 [Ihr Autohaus]. Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <!-- JavaScript for Slider -->
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex - 1].style.display = "block";  
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        function plusSlides(n) {
+            slideIndex += n - 1;  // Adjusting for auto-advance
+            showSlides();
+        }
+    </script>
+
+</body>
+</html>
