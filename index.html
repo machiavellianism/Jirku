@@ -18,18 +18,16 @@
         }
 
         header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0; /* Reduce padding */
-    text-align: center;
-    min-height: 100px; /* Ensure a minimum height for the logo */
-}
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0; /* Reduce padding to half */
+            text-align: center;
+            min-height: 60px; /* Ensure a smaller minimum height */
+        }
 
-header img {
-    width: 150px;  /* Adjust the logo size as necessary */
-    height: auto;  /* Ensure the logo maintains its aspect ratio */
-}
-
+        header img {
+            width: 120px; /* Adjust logo size to fit smaller header */
+            height: auto;
         }
 
         nav {
@@ -83,7 +81,7 @@ header img {
 
         .slider img {
             width: 100%;
-            height: 500px;
+            height: 400px; /* Reduced height to fit smaller screens */
             object-fit: cover;
         }
 
@@ -109,7 +107,7 @@ header img {
         /* Responsive Styling */
         @media (max-width: 768px) {
             header img {
-                width: 100px; /* Adjust the logo size for smaller screens */
+                width: 100px; /* Adjust logo size for tablet screens */
             }
 
             section {
@@ -117,7 +115,22 @@ header img {
             }
 
             .slider img {
-                height: 300px;
+                height: 300px; /* Adjust slider height for tablets */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header img {
+                width: 80px; /* Adjust logo size for mobile screens */
+            }
+
+            .slider img {
+                height: 200px; /* Adjust slider height for mobile */
+            }
+
+            nav a {
+                display: block; /* Stack links on mobile */
+                margin: 10px 0;
             }
         }
     </style>
@@ -126,7 +139,7 @@ header img {
 
     <!-- Header Section with Logo -->
     <header>
-        <img src="https://github.com/machiavellianism/jirku/blob/main/logo.png" alt="Ihr Autohaus Logo"> <!-- Logo replaces the title -->
+        <img src="logo.png" alt="Ihr Autohaus Logo"> <!-- Logo replaces the title -->
         <p>Ihr zuverlässiger Partner für Autoverkauf, Dienstleistungen und Reparaturen.</p>
     </header>
 
@@ -140,13 +153,13 @@ header img {
     <!-- Slider Section -->
     <div class="slider">
         <div class="slides">
-            <img src="https://via.placeholder.com/1500x500?text=Auto+1" alt="Auto 1">
+            <img src="https://via.placeholder.com/1500x400?text=Auto+1" alt="Auto 1">
         </div>
         <div class="slides">
-            <img src="https://via.placeholder.com/1500x500?text=Auto+2" alt="Auto 2">
+            <img src="https://via.placeholder.com/1500x400?text=Auto+2" alt="Auto 2">
         </div>
         <div class="slides">
-            <img src="https://via.placeholder.com/1500x500?text=Auto+3" alt="Auto 3">
+            <img src="https://via.placeholder.com/1500x400?text=Auto+3" alt="Auto 3">
         </div>
 
         <!-- Navigation Buttons -->
@@ -196,7 +209,7 @@ header img {
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}    
             slides[slideIndex - 1].style.display = "block";  
-            setTimeout(showSlides, 5000); // Change image every 3 seconds
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
         }
 
         function plusSlides(n) {
